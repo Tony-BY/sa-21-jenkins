@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace  }}
 spec:
   ports:
     - name: master
-      port: {{ .Values.service.ports.master.port }}
-      targetPort: {{ .Values.service.ports.master.targetPort }}
+      port: {{ .Values.ports.http_port }}
+      targetPort: {{ .Values.ports.http_port}}
     - name: slave
-      port: {{ .Values.service.ports.slave.port }}
-      targetPort: {{ .Values.service.ports.slave.targetPort }}
+      port: {{ .Values.ports.jnlp_port }}
+      targetPort: {{ .Values.ports.jnlp_port }}
   selector:
     app: {{ .Release.Name }}

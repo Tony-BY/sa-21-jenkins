@@ -1,12 +1,11 @@
 # Default values for jenkins.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-namespace: ci-cd
+
 replicaCount: 1
 
 image: jfrog.it-academy.by/public/jenkins-ci:askuratovich
-java_opts: "-Djenkins.install.runSetupWizard=false"
-casc_jenkins_config: /var/jenkins_home/casc_configs/jenkins.yaml
+
 ports:
    http_port: 8080
    jnlp_port: 50000
@@ -14,17 +13,16 @@ nfs:
    server: 192.168.37.105
    path: /mnt/IT-Academy/nfs-data/sa2-21-22/a_skuratovich/jenkins
 
+resources:
+   limits:
+     cpu: 2000m
+     memory: 3000Mi
+   requests:
+     cpu: 2000m
+     memory: 2000Mi
+
 adminAddress: "iantonio.by@gmail.com"
 url: "http://jenkins.k8s-25.sa/"
-
-service:
-  ports:
-     master:
-        port: 8080
-        targetPort: 8080
-     slave:
-        port: 50000
-        targetPort: 50000     
 
 ingress:
   enabled: enable
@@ -43,11 +41,5 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources:
-   limits:
-     cpu: 2000m
-     memory: 3000Mi
-   requests:
-     cpu: 2000m
-     memory: 2000Mi
+
 

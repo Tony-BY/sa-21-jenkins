@@ -3,12 +3,12 @@ entries:
   jenkins:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-01T16:46:01.507875637+03:00"
+    created: "2022-09-02T14:34:41.401060261+03:00"
     description: A Helm chart for Kubernetes
-    digest: 72bf4f60c2068971868c14c69adbdf91f5d76a7c0b52c61c37ce39a257ba7144
+    digest: 82067a2ef8f82c889326642d4430854519d52fbd7dd3b99719ac381dfc796ea0
     name: jenkins
     type: application
     urls:
     - https://tony-by.github.io/sa-21-jenkins/jenkins-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-01T16:46:01.498995337+03:00"
+generated: "2022-09-02T14:34:41.392918261+03:00"
